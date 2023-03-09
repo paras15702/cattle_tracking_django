@@ -1,0 +1,31 @@
+<!-- base.html -->
+{% extends 'tracking/base.html' %}
+{% load static %}
+{% block content %}
+    
+<!-- index.html -->
+
+
+
+<div class="container mt-5">
+  <h1 class="text-center mb-5">Cattle Tracker</h1>
+  <p class="text-center mb-5">Welcome to the cattle tracking system.</p>
+  <div class="d-flex justify-content-center">
+    <a class="btn btn-primary mr-3" href="{% url 'addfarmer' %}">Add Farmer</a>
+    <a class="btn btn-primary" href="{% url 'viewfarmerlist' %}">View Farmers</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+    <style>
+      .container {
+          max-width: 800px;
+        }
+    </style>
+
+
+
+        
+{% endblock %}
+

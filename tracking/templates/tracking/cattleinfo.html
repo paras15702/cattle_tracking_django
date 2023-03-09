@@ -1,0 +1,56 @@
+<!-- templates/farmer_info.html -->
+{% extends 'tracking/base.html' %}
+
+{% block content %}
+  <h2 style="text-align: center; margin-top: 50px;">Cattle Information</h2>
+  <table style="width: 500px; margin: 0 auto;">
+    {% comment %} <tr>
+        <th style="padding: 10px;">Photo</th>
+        <td style="padding: 10px;">
+            {%if farmer.photo%}
+            <img src="{{ farmer.photo.url}}"></td>
+            {%endif%}
+      </tr> {% endcomment %}
+    <tr>
+      <th style="padding: 10px;">Name</th>
+      <td style="padding: 10px;">{{ cattle.name }}</td>
+    </tr>
+    <tr>
+      <th style="padding: 10px;">Location</th>
+      <td><a href="{% url 'map' cattle.id %}">
+        <button type="button">VIEW LOCATION</button>
+      </a>
+    </tr>
+    
+    <tr>
+      <th style="padding: 10px;">Weight</th>
+      <td style="padding: 10px;">{{ cattle.weight }}</td>
+    </tr>
+    <tr>
+        <th style="padding: 10px;">Age</th>
+        <td style="padding: 10px;">{{ cattle.age }}</td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">Date_of_birth</th>
+        <td style="padding: 10px;">{{ cattle.date}}</td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">Breed</th>
+        <td style="padding: 10px;">{{ cattle.breed}}</td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">Owner</th>
+        <td style="padding: 10px;">{{ cattle.owner}}</td>
+      </tr>
+      
+      <tr>
+        <th style="padding: 10px;">Pregnant</th>
+        <td style="padding: 10px;">{{ cattle.pregnant}}</td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">Lost_Status</th>
+        <td style="padding: 10px;">{{ cattle.lost_status}}</td>
+      </tr>
+      
+  </table>
+{% endblock %}

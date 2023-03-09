@@ -1,0 +1,17 @@
+{% extends 'tracking/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-center mb-5">Add Farmer</h1>
+  
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    {{ form1.as_p }}
+     
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary">Add Farmer</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

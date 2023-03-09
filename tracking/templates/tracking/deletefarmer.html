@@ -1,0 +1,12 @@
+{% extends 'tracking/base.html' %}
+{% load static %}
+{%block content%}
+<p> Are you sure you want to delete {{farmer}}</p>
+
+<form  action="{%url 'deletefarmer' farmer.id%}"method="POST">
+    {% csrf_token %}
+    <a href="{%url 'home'%}"><button type="button">CANCEL</button></a>
+    <input type = "submit" name="confirm" value="DELETE">
+
+</form>    
+{%endblock%}

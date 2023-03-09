@@ -1,0 +1,40 @@
+<!-- templates/farmer_info.html -->
+{% extends 'tracking/base.html' %}
+
+{% block content %}
+  <h2 style="text-align: center; margin-top: 50px;">Farmer Information</h2>
+  <table style="width: 500px; margin: 0 auto;">
+    <tr>
+        <th style="padding: 10px;">Photo</th>
+        <td style="padding: 10px;">
+            {%if farmer.photo%}
+            <img src="{{ farmer.photo.url}}"></td>
+            {%endif%}
+      </tr>
+    <tr>
+      <th style="padding: 10px;">Name</th>
+      <td style="padding: 10px;">{{ farmer.name }}</td>
+    </tr>
+    <tr>
+      <th style="padding: 10px;">Address</th>
+      <td style="padding: 10px;">{{ farmer.address }}</td>
+    </tr>
+    <tr>
+      <th style="padding: 10px;">Phone Number</th>
+      <td style="padding: 10px;">{{ farmer.contact }}</td>
+    </tr>
+    <tr>
+      <th style="padding: 10px;">Email</th>
+      <td style="padding: 10px;">{{ farmer.email }}</td>
+    </tr>
+    <tr>
+        <th style="padding: 10px;">Age</th>
+        <td style="padding: 10px;">{{ farmer.age }}</td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">Date_of_birth</th>
+        <td style="padding: 10px;">{{ farmer.dateOfBirth}}</td>
+      </tr>
+      
+  </table>
+{% endblock %}
